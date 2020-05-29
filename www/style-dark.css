@@ -1,0 +1,28 @@
+html, body {
+    background: #212121;
+}
+
+.head, .bottom {
+    background: #212121;
+    color: white;
+}
+
+.head > .title {
+    color: white;
+}
+
+.bottomicon > .fas, .bottomicon > .far, .bottomicon > .fal {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main {
+    background: #121212;
+}
+
+.chatsList {
+    color: white;
+}
+
+.chatElemMessage {
+    color: rgba(255,255,255,0.7);
+}

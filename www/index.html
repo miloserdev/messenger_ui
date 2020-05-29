@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by  TheMarshallElite</title>
+
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--AndroidManifest adjustPan -> adjustResize -->
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="theme-color" content="#212121" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <!--<link rel="stylesheet" href="./style-dark.css">-->
+  <link rel="stylesheet" href="./fonts/stylesheet.css">
+  <link rel="stylesheet" href="./chatlist.css">
+  <link rel="stylesheet" href="./css/all.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="grid-container">
+  <div class="head">
+    <div class="leftItem"><i class="fal fa-home"></i></div>
+    <div class="title" onclick="document.getElementsByClassName('dropdops')[0].toggleAttribute('open')">Сообщения</div>
+    <div class="rightItem"><i class="fal fa-search" onclick="dopen(this)"></i></div>
+  </div>
+  <script>
+    function dopen(elem) {
+      elem.toggleAttribute('open'); 
+      var dropdops = document.getElementsByClassName('dropdops')[0];
+      var searcher = document.getElementById('searcher');
+
+      dropdops.toggleAttribute('open');
+      if (document.getElementsByClassName('dropdops')[0].hasAttribute('open')) {
+        searcher.disabled=false;
+        searcher.value="";
+        searcher.focus();
+        console.log('opened');
+      } else {
+        searcher.disabled=true;
+        searcher.value="";
+        searcher.blur();
+        console.log('closed');
+      }
+      //
+      myFunction();
+      //searcher.onfocus = () => { if(!dropdops.hasAttributes('open')) { searcher.blur(); } }
+      //searcher.onblur = (ss) => { searcher.value=""; dropdops.removeAttribute('open'); elem.removeAttribute('open'); myFunction(); return }
+    }
+  </script>
+  <div class="main">
+    <div class="dropdops">
+      <div class="searchbox">
+        <div class="sbicon"><i class="fal fa-search"></i></div>
+        <input id="searcher" onkeyup="myFunction()" type="text" placeholder="Search">
+      </div>
+     <!--<div class="scrollcontainer">
+      <div class="scrollholder">
+        <div class="scrollwrapper">
+
+          <div class="scitem blue">
+            <div class="scicon"><i class="fal fa-compass"></i></div>
+            <div class="sctitle">Домой</div>
+          </div>
+
+          <div class="scitem red">
+            <div class="scicon"><i class="fal fa-home"></i></div>
+            <div class="sctitle">Профиль</div>
+          </div>
+
+          <div class="scitem green">
+            <div class="scicon"><i class="fal fa-bell"></i></div>
+            <div class="sctitle">Друзья</div>
+          </div>
+
+          <div class="scitem white">
+            <div class="scicon"><i class="fal fa-compass"></i></div>
+            <div class="sctitle">Сообщения</div>
+          </div>
+
+          <div class="scitem white">
+            <div class="scicon"><i class="fal fa-compass"></i></div>
+            <div class="sctitle">Музыка</div>
+          </div>
+
+          <div class="scitem blue">
+            <div class="scicon"><i class="fal fa-compass"></i></div>
+            <div class="sctitle">Видео</div>
+          </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+ 
+  <ul class="chatsList" id="chatsList">
+    <!--<div class="listloader" hidden><i class="fal fa-spinner-third"></i></div>-->
+  </ul>
+
+  </div>
+  <div class="bottom">
+    <div class="bottombar">
+      <div class="bottomicon noclick" id="BottomMainRefresh">
+        <i class="fal fa-sync-alt"></i>
+      </div>
+      <div class="bottomicon" id="BottomMessages">
+        <i class="fal fa-comment"></i>
+      </div>
+      <div class="bottomicon" id="BottomNotifications">
+        <i class="fal fa-bell"></i>
+      </div>
+      <div class="bottomicon">
+        <i class="fal fa-cog" id="BottomSettings"></i>
+      </div>
+      <div class="bottomicon" id="BottomProfile">
+        <img src="https://sun1-15.userapi.com/khIfCoNNHa_z3OqzrhCuW4hNkDazatkJ3F7qRQ/gaRXC7pODIY.jpg?ava=1">
+      </div>
+    </div>
+  </div>
+  
+</div>
+<script src="cordova.js"></script>
+<script src="./script.js"></script>
+
+<!-- partial -->
+  
+</body>
+</html>
